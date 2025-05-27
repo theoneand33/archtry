@@ -3,6 +3,17 @@ use indicatif::{ProgressBar, ProgressStyle};
 use rpassword::read_password;
 use std::{thread, time::Duration};
 
+#[derive(Debug, Clone)]
+pub struct Config {
+    pub show_hints: bool,
+}
+
+impl Config {
+    pub fn new(show_hints: bool) -> Self {
+        Config { show_hints }
+    }
+}
+
 pub fn sleep(secs: u64) {
     thread::sleep(Duration::from_secs(secs));
 }
@@ -19,6 +30,19 @@ pub fn get_user_input() -> String {
 
 pub fn get_user_input_with_prompt(prompt: &str, hide_input: bool) -> String {
     println!("{}", prompt.bright_blue());
+    if hide_input {
+        read_password().unwrap_or_default()
+    } else {
+        get_user_input()
+    }
+}
+
+pub fn get_user_input_with_prompt_and_config(prompt: &str, hide_input: bool, config: &Config) -> String {
+    if config.show_hints {
+        println!("{}", prompt.bright_blue());
+    } else {
+        println!("{}", prompt);
+    }
     if hide_input {
         read_password().unwrap_or_default()
     } else {

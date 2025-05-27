@@ -1,0 +1,1 @@
+/home/noahs/Documents/GitHub/archtry/target/debug/archtry: /home/noahs/Documents/GitHub/archtry/src/config.rs /home/noahs/Documents/GitHub/archtry/src/main.rs /home/noahs/Documents/GitHub/archtry/src/models.rs /home/noahs/Documents/GitHub/archtry/src/simulator.rs /home/noahs/Documents/GitHub/archtry/src/utils.rs
