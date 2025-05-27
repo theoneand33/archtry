@@ -44,6 +44,10 @@ Launch ArchTry with:
 ```bash
 archtry
 ```
+launch without hints:
+```bash
+archtry -- --no-hints
+```
 
 1. Choose your GPU (AMD, Intel, or NVIDIA).  
 2. Select your device type (Laptop or PC).  
